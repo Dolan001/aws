@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design AWS Architecture"
+  short_description: "Map requirements to a minimal secure AWS design"
+  default_prompt: "Use $design-aws-architecture to design a production AWS architecture for this monorepo."

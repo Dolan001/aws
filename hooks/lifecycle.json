@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "instructions": {
+    "pre_task": "hooks/pre-task.md",
+    "pre_write": "hooks/pre-write.md",
+    "post_write": "hooks/post-write.md",
+    "pre_verify": "hooks/pre-verify.md",
+    "pre_deploy": "hooks/pre-deploy.md",
+    "post_deploy": "hooks/post-deploy.md"
+  },
+  "hooks": {
+    "pre_task": ["require_verified_testing", "validate_task_contract", "acquire_target_path_lease"],
+    "pre_write": ["enforce_infrastructure_scope", "reject_credentials_and_state"],
+    "post_write": ["check_changed_paths", "validate_generated_structure", "run_iac_checks", "write_evidence"],
+    "pre_verify": ["release_implementer_lease", "require_independent_agent"],
+    "pre_deploy": ["require_explicit_execute", "require_readiness", "acquire_environment_lock"],
+    "post_deploy": ["run_runtime_checks", "capture_evidence", "release_environment_lock"]
+  }
+}

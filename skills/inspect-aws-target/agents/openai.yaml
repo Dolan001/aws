@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inspect AWS Target"
+  short_description: "Inspect AWS prerequisites without mutation"
+  default_prompt: "Use $inspect-aws-target to inventory AWS deployment inputs, identities, and current target state."

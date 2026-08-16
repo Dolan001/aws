@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generate AWS Infrastructure"
+  short_description: "Generate modular OpenTofu-compatible AWS IaC"
+  default_prompt: "Use $generate-aws-infrastructure to create validated environment-separated AWS infrastructure code."

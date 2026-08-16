@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "format": "markdown-first",
+  "path_pattern": "agents/{agent}.md",
+  "framework": "aws",
+  "agents": [
+    {
+      "agent": "aws-platform-architect",
+      "purpose": "Design the AWS account, network, runtime, data, edge, observability, and recovery architecture.",
+      "writes_application_code": false,
+      "outputs": ["AWS architecture decision", "deployment contract", "cost and risk assumptions"]
+    },
+    {
+      "agent": "aws-infrastructure-implementer",
+      "purpose": "Generate validated AWS infrastructure, CI/CD, dashboards, alarms, and runbooks in the target.",
+      "writes_application_code": false,
+      "allowed_target_paths": ["infra/**", ".github/workflows/**", "ops/**", "docs/deployment/**", ".ai/evidence/deployment/**"],
+      "maximum_retries_per_failure": 2
+    },
+    {
+      "agent": "aws-independent-verifier",
+      "purpose": "Independently verify AWS delivery assets and evidence without cloud mutation.",
+      "writes_application_code": false,
+      "allowed_target_paths": [".ai/evidence/deployment/**", "artifacts/deployment/**"]
+    }
+  ]
+}

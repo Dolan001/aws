@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify AWS Disaster Recovery"
+  short_description: "Test AWS backup and recovery readiness"
+  default_prompt: "Use $verify-aws-disaster-recovery to verify restore procedures, RPO, RTO, and disaster recovery evidence."

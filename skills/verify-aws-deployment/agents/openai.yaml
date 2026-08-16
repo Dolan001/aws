@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify AWS Deployment"
+  short_description: "Verify AWS architecture and running releases"
+  default_prompt: "Use $verify-aws-deployment to independently verify AWS IaC or an AWS environment deployment."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure AWS Identity"
+  short_description: "Design least-privilege AWS and GitHub OIDC access"
+  default_prompt: "Use $configure-aws-identity to generate scoped AWS identity and GitHub OIDC trust configuration."

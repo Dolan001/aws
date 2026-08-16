@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rollback AWS Deployment"
+  short_description: "Rollback an AWS service to a verified digest"
+  default_prompt: "Use $rollback-aws-deployment to restore the last verified AWS application release."

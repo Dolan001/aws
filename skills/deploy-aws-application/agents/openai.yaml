@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deploy AWS Application"
+  short_description: "Promote an immutable release safely on AWS"
+  default_prompt: "Use $deploy-aws-application to perform an explicitly approved AWS environment deployment."

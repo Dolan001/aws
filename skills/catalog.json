@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "framework": "aws",
+  "format": "markdown-first",
+  "skills": [
+    {"name": "inspect-aws-target", "path": "skills/inspect-aws-target/SKILL.md"},
+    {"name": "design-aws-architecture", "path": "skills/design-aws-architecture/SKILL.md"},
+    {"name": "generate-aws-infrastructure", "path": "skills/generate-aws-infrastructure/SKILL.md"},
+    {"name": "configure-aws-identity", "path": "skills/configure-aws-identity/SKILL.md"},
+    {"name": "deploy-aws-application", "path": "skills/deploy-aws-application/SKILL.md"},
+    {"name": "verify-aws-deployment", "path": "skills/verify-aws-deployment/SKILL.md"},
+    {"name": "rollback-aws-deployment", "path": "skills/rollback-aws-deployment/SKILL.md"},
+    {"name": "verify-aws-disaster-recovery", "path": "skills/verify-aws-disaster-recovery/SKILL.md"}
+  ]
+}
