@@ -5,7 +5,7 @@ description: Generate modular environment-separated OpenTofu-compatible AWS infr
 
 # Generate AWS infrastructure
 
-Follow `rules/generation.md` and `rules/infrastructure-structure.md`.
+Follow `rules/generation.md` and `rules/project-structure.md`.
 
 1. Generate reusable modules and development, staging, and production roots with explicit inputs.
 2. Configure encrypted versioned remote state and locking without committing backend credentials.
