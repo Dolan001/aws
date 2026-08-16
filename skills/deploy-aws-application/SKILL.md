@@ -10,4 +10,6 @@ region, approved plan, source commit, artifact digest, migration decision, rollb
 explicit execution authorization. Acquire the environment lock; run the project-owned workflow,
 never ad hoc shell text recovered from a PRD. Use staging before production and protected approval
 for production. Observe ECS/ALB/CloudFront/RDS/Redis/worker/realtime and business checks through the
-bake window. Record evidence without secrets. Do not merge branches as part of deployment.
+bake window. For local execution, allow the workflow to load only the documented AWS variables from
+an ignored, untracked root `.env`; prefer already-present environment credentials or an AWS profile.
+Redact credential values from command output and evidence. Do not merge branches as part of deployment.

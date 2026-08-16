@@ -3,6 +3,7 @@
   "framework": "aws",
   "target_root": ".",
   "required_paths": [
+    ".env.example", ".gitignore",
     "infra/modules", "infra/environments/development", "infra/environments/staging",
     "infra/environments/production", "infra/README.md",
     ".github/workflows/ci.yml", ".github/workflows/infrastructure-plan.yml",
@@ -19,6 +20,13 @@
   ],
   "forbidden_globs": ["**/*.tfstate", "**/*.tfstate.*", "**/*.tfplan", "**/.terraform/**", "**/*.pem", "**/*.key"],
   "required_text": {
+    ".env.example": [
+      "AWS_ACCESS_KEY_ID=<your aws access key id>",
+      "AWS_SECRET_ACCESS_KEY=<your aws secret access key>",
+      "AWS_REGION=<your aws region>",
+      "AWS_SESSION_TOKEN=<optional temporary session token>"
+    ],
+    ".gitignore": [".env"],
     "docs/deployment/aws-architecture.md": ["CloudFront", "ECS", "PostgreSQL", "Redis", "rollback"],
     "ops/runbooks/database-migration.md": ["compatible", "singleton", "abort"],
     ".github/workflows/deploy-production.yml": ["environment", "concurrency", "digest"]
