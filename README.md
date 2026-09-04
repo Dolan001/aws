@@ -1,7 +1,7 @@
 # AWS behavior pack
 
 Code-free agents, skills, commands, hooks, rules, and deterministic structure contracts used by
-`agent` to design, generate, validate, deploy, verify, and recover production AWS systems.
+`agents` to design, generate, validate, deploy, verify, and recover production AWS systems.
 
 The default path uses CloudFront, WAF, ALB, ECS Fargate, ECR, RDS PostgreSQL, ElastiCache Redis,
 S3, Route 53, ACM, Secrets Manager, KMS, CloudWatch, and AWS Backup as required. Nginx, Gunicorn,
