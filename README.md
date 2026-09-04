@@ -1,4 +1,4 @@
-# AWS AI behavior pack
+# AWS behavior pack
 
 Code-free agents, skills, commands, hooks, rules, and deterministic structure contracts used by
 `ai_workflow` to design, generate, validate, deploy, verify, and recover production AWS systems.
