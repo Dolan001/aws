@@ -7,6 +7,8 @@ description: Independently verify generated AWS assets or an explicitly accessib
 
 For generated assets, apply `rules/verification.md` and validate the complete structure contract,
 HCL, workflows, identity, supply chain, database release safety, alarms, rollback, and recovery.
+Require the separate CI/CD pack's independent verification evidence and confirm its provider,
+artifact digest contract, protected production gate, and environment identity match AWS plans.
 Remain read-only with respect to AWS.
 
 For a live environment, require explicit read-only access and exact environment identity. Match the

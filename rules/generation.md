@@ -13,10 +13,9 @@
   `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, and optional
   `AWS_SESSION_TOKEN`. Local deployment commands may load those names from an ignored, untracked
   `.env`; CI/CD must use OIDC and runtime workloads must use IAM roles.
-- Build once, create SBOM/provenance, scan, push to ECR, and promote the same digest. Pin actions.
-- Generate pull-request CI plus plan, image build, staging, production, rollback, and scheduled drift
-  workflows for the approved provider. Production requires protected-environment approval and
-  deployment concurrency. Fail readiness for an unsupported provider rather than substituting one.
+- Define immutable ECR artifact and scoped role contracts for the CI/CD pack. The CI/CD pack owns
+  build-once, SBOM/provenance, scan, digest promotion, provider actions/images, and pipeline jobs.
+  Production requires protected-environment approval and deployment concurrency.
 - If Cloudflare is selected, use a scoped API token at deployment time, verify origin TLS, and
   keep DNS changes reversible. Never put the token in generated files, plans, logs, or evidence.
 - Make database migrations a singleton release task using expand/migrate/contract compatibility.

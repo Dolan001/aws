@@ -7,7 +7,7 @@ Code-free agents, skills, commands, hooks, rules, and deterministic structure co
 
 An explicit `Deployment provider: AWS` PRD directive records the destination, but `$start-build`
 still defers AWS work. Run `$start-deployment --deployment aws` only when you want deployment assets
-and readiness checks. This selects the `aws` pack and generates infrastructure, CI/CD, operational
+and readiness checks. This selects the `aws` and `cicd` packs and generates infrastructure, CI/CD, operational
 plans, and evidence in the target project. It does not apply infrastructure or deploy an app.
 
 Live staging, production, and rollback are separate commands with explicit authorization,
