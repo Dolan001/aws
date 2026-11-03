@@ -4,6 +4,8 @@ description: Generate modular OpenTofu-compatible AWS infrastructure, CI/CD, obs
 ---
 
 Write only contract-approved `infra/**`, `.github/workflows/**`, `ops/**`, deployment documentation,
-and evidence paths. Use environment separation, remote encrypted state, locking, GitHub OIDC,
+and evidence paths. Use environment separation, remote encrypted state, locking, CI/CD federation,
 immutable images, least privilege, secret references, safe migrations, and explicit deployment
 controls. Validate locally; never apply plans or contact a live environment during generation.
+Generate CI/CD files for the selected provider. GitHub Actions is the default only when no other
+provider is required. Do not emit a pipeline for an unsupported provider and claim readiness.

@@ -2,9 +2,11 @@
 
 Independent verification must prove formatting, module initialization without remote state,
 validation, static/security/policy checks, environment separation, no secrets/state/plans, bounded
-IAM, pinned workflow actions, OIDC conditions, immutable image digests, protected production,
+IAM, pinned workflow actions, federation conditions, immutable image digests, protected production,
 concurrency controls, migration serialization, health checks, autoscaling, alarms, log retention,
-backup/PITR, rollback, and restore procedures.
+backup/PITR, rollback, and restore procedures. Verify the generated CI/CD provider and DNS
+provider match the approved PRD. For Cloudflare, verify scoped token references, certificate
+trust, end-to-end HTTPS, and DNS cutover/rollback without exposing a token.
 
 When live environment verification is explicitly authorized, record account alias/ID, region,
 environment, source commit, artifact digest, plan identity, deployment ID, health and smoke results,

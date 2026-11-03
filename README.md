@@ -14,14 +14,20 @@ Live staging, production, and rollback are separate commands with explicit autho
 environment boundaries, and readiness evidence. No build command pushes or mutates AWS by default.
 
 The default path uses CloudFront, WAF, ALB, ECS Fargate, ECR, RDS PostgreSQL, ElastiCache Redis,
-S3, Route 53, ACM, Secrets Manager, KMS, CloudWatch, and AWS Backup as required. Nginx, Gunicorn,
+S3, the approved DNS provider, ACM, Secrets Manager, KMS, CloudWatch, and AWS Backup as required.
+Nginx, Gunicorn,
 Celery, WebSockets, SES, SNS, and EventBridge are selected only from verified application needs.
+Route 53 is the default DNS provider; Cloudflare is optional when selected in the PRD.
 Infrastructure and workflows are generated into the target monorepo, never copied from templates.
 
 For local/manual deployment, generated projects include a `.env.example` containing
 `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, and optional `AWS_SESSION_TOKEN`.
-Copy it to ignored `.env` and replace the placeholders. GitHub Actions continues to use OIDC, and
-runtime services use IAM roles and Secrets Manager; real AWS credentials are never committed.
+Prefer an AWS profile or another short-lived session. If local variables are necessary, copy
+`.env.example` to ignored `.env` and replace the placeholders. Add a scoped
+`CLOUDFLARE_API_TOKEN` only when Cloudflare DNS changes are selected. GitHub Actions is the
+default CI/CD provider and uses OIDC; another approved provider must use equivalent short-lived
+federation and protected production approvals. Runtime services use IAM roles and Secrets Manager;
+real credentials are never committed.
 
 ## What verification means
 

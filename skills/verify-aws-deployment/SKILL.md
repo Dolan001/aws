@@ -12,4 +12,6 @@ Remain read-only with respect to AWS.
 For a live environment, require explicit read-only access and exact environment identity. Match the
 running task definitions and image digests to approved evidence; verify health, API contracts,
 critical journeys, queues, WebSockets, data operations, alarms, logs, metrics, backup status, and
-deployment events. Record commands and results; do not repair or deploy during independent review.
+deployment events. Check the chosen DNS provider, public HTTPS certificate, and origin TLS path;
+verify staging and production use the intended account and region. Record commands and results;
+do not repair or deploy during independent review.
