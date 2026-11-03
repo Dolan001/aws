@@ -5,11 +5,7 @@
   "required_paths": [
     ".env.example", ".gitignore",
     "infra/modules", "infra/environments/development", "infra/environments/staging",
-    "infra/environments/production", "infra/README.md",
-    ".github/workflows/ci.yml", ".github/workflows/infrastructure-plan.yml",
-    ".github/workflows/build-images.yml", ".github/workflows/deploy-staging.yml",
-    ".github/workflows/deploy-production.yml", ".github/workflows/rollback.yml",
-    ".github/workflows/drift-detection.yml", "ops/runbooks/deployment.md",
+    "infra/environments/production", "infra/README.md", "ops/runbooks/deployment.md",
     "ops/runbooks/rollback.md", "ops/runbooks/database-migration.md",
     "ops/runbooks/disaster-recovery.md", "ops/alerts", "ops/dashboards",
     "docs/deployment/deployment-contract.md", "docs/deployment/aws-architecture.md"
@@ -18,6 +14,23 @@
     "infra/modules", "infra/environments/development", "infra/environments/staging",
     "infra/environments/production", "ops/alerts", "ops/dashboards"
   ],
+  "ci_provider_paths": {
+    "github-actions": [
+      ".github/workflows/ci.yml", ".github/workflows/infrastructure-plan.yml",
+      ".github/workflows/build-images.yml", ".github/workflows/deploy-staging.yml",
+      ".github/workflows/deploy-production.yml", ".github/workflows/rollback.yml",
+      ".github/workflows/drift-detection.yml"
+    ],
+    "gitlab-ci": [".gitlab-ci.yml"]
+  },
+  "ci_provider_required_text": {
+    "github-actions": {
+      ".github/workflows/deploy-production.yml": ["environment", "concurrency", "digest"]
+    },
+    "gitlab-ci": {
+      ".gitlab-ci.yml": ["stages:", "deploy", "production", "resource_group"]
+    }
+  },
   "forbidden_globs": ["**/*.tfstate", "**/*.tfstate.*", "**/*.tfplan", "**/.terraform/**", "**/*.pem", "**/*.key"],
   "required_text": {
     ".env.example": [
@@ -28,7 +41,6 @@
     ],
     ".gitignore": [".env"],
     "docs/deployment/aws-architecture.md": ["CloudFront", "ECS", "PostgreSQL", "Redis", "rollback"],
-    "ops/runbooks/database-migration.md": ["compatible", "singleton", "abort"],
-    ".github/workflows/deploy-production.yml": ["environment", "concurrency", "digest"]
+    "ops/runbooks/database-migration.md": ["compatible", "singleton", "abort"]
   }
 }

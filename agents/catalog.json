@@ -14,7 +14,7 @@
       "agent": "aws-infrastructure-implementer",
       "purpose": "Generate validated AWS infrastructure, CI/CD, dashboards, alarms, and runbooks in the target.",
       "writes_application_code": false,
-      "allowed_target_paths": ["infra/**", ".github/workflows/**", "ops/**", "docs/deployment/**", ".ai/evidence/deployment/**"],
+      "allowed_target_paths": ["infra/**", ".github/workflows/**", ".gitlab-ci.yml", "ci/**", "ops/**", "docs/deployment/**", ".ai/evidence/deployment/**"],
       "maximum_retries_per_failure": 2
     },
     {

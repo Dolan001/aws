@@ -25,7 +25,7 @@ For local/manual deployment, generated projects include a `.env.example` contain
 Prefer an AWS profile or another short-lived session. If local variables are necessary, copy
 `.env.example` to ignored `.env` and replace the placeholders. Add a scoped
 `CLOUDFLARE_API_TOKEN` only when Cloudflare DNS changes are selected. GitHub Actions is the
-default CI/CD provider and uses OIDC; another approved provider must use equivalent short-lived
+default CI/CD provider and uses OIDC; GitLab CI is also supported and must use equivalent short-lived
 federation and protected production approvals. Runtime services use IAM roles and Secrets Manager;
 real credentials are never committed.
 
